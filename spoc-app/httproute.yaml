@@ -6,7 +6,7 @@ metadata:
 spec:
   parentRefs:
   - kind: Gateway
-    name:  internal-regional-alb
+    name: internal-regional-alb
   hostnames:
   - "store.example.com"
   rules:

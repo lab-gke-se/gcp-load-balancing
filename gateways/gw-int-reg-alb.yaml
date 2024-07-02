@@ -2,7 +2,7 @@ kind: Gateway
 apiVersion: gateway.networking.k8s.io/v1beta1
 metadata:
   name: internal-regional-alb
-  namespace: app-team 
+  namespace: app-team
 spec:
   gatewayClassName: gke-l7-rilb
   listeners:
