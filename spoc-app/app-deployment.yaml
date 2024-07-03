@@ -23,6 +23,32 @@ spec:
         env:
         - name: METADATA
           value: "store-v1"
+---          
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: store-v4
+  namespace: app-team
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: store
+      version: v4
+  template:
+    metadata:
+      labels:
+        app: store
+        version: v4
+    spec:
+      containers:
+      - name: whereami
+        image: us-docker.pkg.dev/google-samples/containers/gke/whereami:v1.2.20
+        ports:
+          - containerPort: 8080
+        env:
+        - name: METADATA
+          value: "store-v4"          
 ---
 apiVersion: v1
 kind: Service
